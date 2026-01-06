@@ -1,0 +1,73 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive files
+terraform.tfvars
+*.tfvars
+*.auto.tfvars
+.env
+.env.local
+*.pem
+*.key
+*.crt
+secrets/
+credentials/
+
+# Bob-Shell files
+.bob/
+.bob-shell/
+bob-shell.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+
+# Node modules (if using MCP server)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# Documentation build
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Examples that shouldn't be committed
+examples/**/terraform.tfstate
+examples/**/.terraform/
+examples/**/terraform.tfvars
