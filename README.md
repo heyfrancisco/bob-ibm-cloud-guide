@@ -119,25 +119,6 @@ bob
 - 📖 **Built-in Documentation**: Bob knows IBM Cloud provider documentation
 - 🛡️ **Security First**: Bob suggests secure configurations by default
 
-## 🎓 Learning Path
-
-### Beginner (Week 1)
-1. Complete Getting Started guide
-2. Deploy your first VPC
-3. Create a simple compute instance
-
-### Intermediate (Week 2-3)
-1. Master Terraform basics
-2. Use Bob for code generation
-3. Set up TIM MCP integration
-4. Deploy a Kubernetes cluster
-
-### Advanced (Week 4+)
-1. Implement best practices
-2. Use IAC-Spec-Kit for complex projects
-3. Build reusable modules
-4. Automate with CI/CD
-
 ## 🤝 Contributing
 
 We welcome contributions! Whether it's:
