@@ -159,13 +159,6 @@ This guide is licensed under the MIT License - see [LICENSE](./LICENSE) for deta
 - [IBM Cloud Documentation](https://cloud.ibm.com/docs)
 - [Terraform IBM Cloud Provider](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs)
 
-## 📞 Support
-
-- 💬 [Community Discord](https://discord.gg/bob-ide)
-- 📧 Email: support@bob-ide.com
-- 🐦 Twitter: [@BobIDE](https://twitter.com/BobIDE)
-
----
 
 **Ready to transform your IBM Cloud experience?** Start with the [Getting Started Guide](./docs/01-getting-started.md) →
 
