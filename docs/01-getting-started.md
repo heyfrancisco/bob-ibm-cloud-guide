@@ -27,71 +27,36 @@ By the end of this guide, you will:
 
 ## Step 1: Install Bob IDE
 
-### macOS
-
-```bash
-# Using Homebrew (recommended)
-brew install bob-ide
-
-# Or using the install script
-curl -fsSL https://bob-ide.com/install.sh | sh
-```
-
-### Linux
-
-```bash
-# Using the install script
-curl -fsSL https://bob-ide.com/install.sh | sh
-
-# Or download the binary directly
-wget https://bob-ide.com/downloads/bob-ide-linux-amd64
-chmod +x bob-ide-linux-amd64
-sudo mv bob-ide-linux-amd64 /usr/local/bin/bob-ide
-```
-
-### Windows (WSL2)
-
-```bash
-# Inside WSL2 terminal
-curl -fsSL https://bob-ide.com/install.sh | sh
-```
-
-### Verify Installation
-
-```bash
-bob-ide --version
-# Expected output: Bob IDE v1.x.x
-```
+> **⚠️ Closed Beta Notice**
+> 
+> Bob IDE is currently in **closed beta** and is not yet available to the general public. Access is limited to selected beta testers and early adopters.
+> 
+> If you're interested in joining the beta program, please:
+> - Visit our website for updates on public availability
+> - Join our waitlist for early access notifications
+> - Follow our community channels for announcements
+> 
+> This documentation is provided for beta testers who have already received access credentials.
 
 ---
 
 ## Step 2: Install Bob-Shell
 
-Bob-Shell is the command-line interface that brings AI-powered assistance to your terminal.
+> **⚠️ Closed Beta Notice**
+> 
+> Bob-Shell is currently in **closed beta** and is not yet available for public download. Access is restricted to approved beta participants.
+> 
+> **For Beta Testers**: If you have been granted access to the closed beta, you will receive:
+> - A personalized installation package
+> - Detailed setup instructions via email
+> - Access credentials and API keys
+> - Direct support channel access
+> 
+> **For Everyone Else**: We're working hard to make Bob-Shell available to everyone soon. Stay tuned for announcements about our public release!
 
-### Installation
+### Beta Tester First Launch
 
-```bash
-# macOS/Linux
-curl -fsSL https://bob-shell.dev/install.sh | sh
-
-# Add to PATH (if not automatically added)
-echo 'export PATH="$HOME/.bob-shell/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-
-# For zsh users
-echo 'export PATH="$HOME/.bob-shell/bin:$PATH"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-### Verify Installation
-
-```bash
-bob --version
-# Expected output: Bob-Shell v1.x.x
-```
-
-### First Launch
+If you're a beta tester and have completed the installation process provided to you, launch Bob-Shell:
 
 ```bash
 bob
@@ -101,8 +66,8 @@ You should see the Bob-Shell welcome screen:
 
 ```
 ╔══════════════════════════════════════════════════════════╗
-║                    Welcome to Bob-Shell                   ║
-║              Your AI-Powered Cloud Assistant              ║
+║                    Welcome to Bob-Shell                  ║
+║              Your AI-Powered Cloud Assistant             ║
 ╚══════════════════════════════════════════════════════════╝
 
 Type 'help' for available commands or just ask me anything!
