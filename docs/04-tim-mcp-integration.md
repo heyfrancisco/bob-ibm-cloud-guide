@@ -185,22 +185,10 @@ Use your system's credential manager or a secrets vault.
 ### Step 1: Locate Bob-Shell Configuration
 
 Bob-Shell stores MCP server configurations in:
-- **macOS/Linux:** `~/.config/bob-shell/mcp_servers.json`
-- **Windows:** `%APPDATA%\bob-shell\mcp_servers.json`
+- **macOS/Linux:** `~/.bob/mcp_settings.json`
+- **Windows:** `%APPDATA%\bob\mcp_settings.json`
 
-### Step 2: Create MCP Configuration
-
-Create or edit the configuration file:
-
-```bash
-# Create directory if it doesn't exist
-mkdir -p ~/.config/bob-shell
-
-# Create/edit configuration
-nano ~/.config/bob-shell/mcp_servers.json
-```
-
-### Step 3: Add IBM Cloud MCP Server Configuration
+### Step 2: Add IBM Cloud MCP Server Configuration
 
 **Basic Configuration (Read-Only):**
 
@@ -248,7 +236,7 @@ nano ~/.config/bob-shell/mcp_servers.json
 - `--mcp-allow-write`: Enable write operations (optional, use carefully)
 - `env`: Environment variables (API key reference)
 
-### Step 4: Available Tools/Commands
+### Step 3: Available Tools/Commands
 
 Common IBM Cloud commands you can expose:
 
@@ -284,7 +272,7 @@ Common IBM Cloud commands you can expose:
 - `is_vpcs` maps to `ibmcloud is vpcs`
 - `ks_clusters` maps to `ibmcloud ks clusters`
 
-### Step 5: Verify Configuration
+### Step 4: Verify Configuration
 
 Start Bob-Shell and verify the connection:
 
