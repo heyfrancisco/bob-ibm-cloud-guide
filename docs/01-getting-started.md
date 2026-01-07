@@ -102,23 +102,48 @@ export IC_RESOURCE_GROUP="default"  # Optional: default resource group
 source ~/.bashrc  # or source ~/.zshrc
 ```
 
-#### Method 2: Bob-Shell Configuration File
+#### Method 2: Bob Configuration File
+
+You can store IBM Cloud credentials in Bob's settings file at `~/.bob/settings.json`. This file supports the complete Bob configuration including themes, IDE settings, and environment variables.
+
+**Option A: Direct Credentials in settings.json**
 
 ```bash
-# Create Bob-Shell config directory
-mkdir -p ~/.bob-shell
+# Create Bob config directory (if it doesn't exist)
+mkdir -p ~/.bob
 
-# Create configuration file
-cat > ~/.bob-shell/config.yaml << EOF
-ibm_cloud:
-  api_key: "your-api-key-here"
-  region: "us-south"
-  resource_group: "default"
+# Create or edit the settings file
+cat > ~/.bob/settings.json << 'EOF'
+{
+  "env": {
+    "IBMCLOUD_API_KEY": "YOUR_IBMCLOUD_API_KEY_HERE",
+    "IBMCLOUD_REGION": "us-south",
+    "IBMCLOUD_RESOURCE_GROUP": "default"
+  }
+}
 EOF
 
 # Secure the config file
-chmod 600 ~/.bob-shell/config.yaml
+chmod 600 ~/.bob/settings.json
 ```
+
+**Option B: Reference Environment Variables**
+
+You can reference environment variables in your settings file using `$VAR_NAME` or `${VAR_NAME}` syntax:
+
+```json
+{
+  "env": {
+    "IBMCLOUD_API_KEY": "$IBMCLOUD_API_KEY",
+    "IBMCLOUD_REGION": "${IC_REGION}",
+    "IBMCLOUD_RESOURCE_GROUP": "${IC_RESOURCE_GROUP}"
+  }
+}
+```
+
+This approach keeps sensitive credentials in your shell profile while allowing Bob to access them through the settings file.
+
+> **💡 Tip**: The `settings.json` file supports additional configuration options like custom themes, IDE integration settings, and IBM SSO tokens. See the [official Bob documentation](https://pages.github.ibm.com/code-assistant/bob-docs/bobshell/configuring/) for complete details.
 
 #### Method 3: Interactive Setup
 
@@ -167,7 +192,7 @@ Bob-Shell will create the following structure:
 ```
 my-first-project/
 ├── .bob/
-│   ├── config.yaml          # Project-specific configuration
+│   ├── settings.json        # Project-specific configuration (optional)
 │   ├── state/               # Local state files
 │   └── cache/               # Cached resources
 ├── terraform/               # Terraform configurations
@@ -175,23 +200,36 @@ my-first-project/
 └── README.md               # Project documentation
 ```
 
-### Configure Project Settings
+### Configure Project Settings (Optional)
 
-Edit `.bob/config.yaml`:
+> **💡 Note**: Project-specific configuration is optional. The global `~/.bob/settings.json` file (configured in Step 3, Method 2) applies to all projects. Only create a project-specific `.bob/settings.json` if you need to override global settings for this particular project.
 
-```yaml
-project:
-  name: "my-first-project"
-  description: "My first IBM Cloud project with Bob"
-  
-ibm_cloud:
-  region: "us-south"
-  resource_group: "default"
-  
-terraform:
-  version: "1.6.0"
-  backend: "local"  # or "ibm-cos" for remote state
+If needed, you can create a project-specific configuration file:
+
+```bash
+# Create project-specific settings (optional)
+cat > .bob/settings.json << 'EOF'
+{
+  "project": {
+    "name": "my-first-project",
+    "description": "My first IBM Cloud project with Bob"
+  },
+  "env": {
+    "IBMCLOUD_REGION": "us-south",
+    "IBMCLOUD_RESOURCE_GROUP": "default"
+  },
+  "terraform": {
+    "version": "1.6.0",
+    "backend": "local"
+  }
+}
+EOF
 ```
+
+**When to use project-specific settings:**
+- Override the default region for this project only
+- Use a different resource group than your global default
+- Specify project-specific Terraform backend configuration
 
 ---
 
